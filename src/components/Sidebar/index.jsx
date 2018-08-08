@@ -2,7 +2,6 @@ import Link from 'gatsby-link';
 import get from 'lodash/get';
 import React from 'react';
 import profilePic from '../../pages/photo.jpg';
-import Links from '../Links';
 import Menu from '../Menu';
 import './style.scss';
 
@@ -53,7 +52,7 @@ class Sidebar extends React.Component {
           <div className="sidebar__author">{authorBlock}</div>
           <div>
             <Menu data={menu} />
-            <Links data={author} />
+            {/* <Links data={author} /> */}
             <p className="sidebar__copyright">{copyright}</p>
           </div>
         </div>
