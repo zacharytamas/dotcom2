@@ -26,7 +26,6 @@ module.exports = {
       twitter: 'zacharytamas',
       github: 'zacharytamas',
       telegram: '',
-
       rss: '#',
       vk: '#'
     }
@@ -105,9 +104,19 @@ module.exports = {
               maxWidth: 960
             }
           },
+          `gatsby-remark-autolink-headers`,
           {
             resolve: 'gatsby-remark-responsive-iframe',
             options: { wrapperStyle: 'margin-bottom: 1.0725rem' }
+          },
+          {
+            resolve: 'gatsby-remark-toc',
+            options: {
+              header: 'Table of Contents'
+              // include: [
+              //   'content/**/*.md' // an include glob to match against
+              // ]
+            }
           },
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',

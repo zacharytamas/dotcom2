@@ -13,6 +13,16 @@ class PageTemplateDetails extends React.Component {
           <div className="content__inner">
             <div className="page">
               <h1 className="page__title">{page.frontmatter.title}</h1>
+              {!page.frontmatter.disableTableOfContents &&
+              page.tableOfContents ? (
+                <div
+                  className="page__toc"
+                  dangerouslySetInnerHTML={{
+                    __html: page.tableOfContents
+                  }}
+                />
+              ) : null}
+
               <div
                 className="page__body"
                 dangerouslySetInnerHTML={{ __html: page.html }}
