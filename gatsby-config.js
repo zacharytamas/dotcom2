@@ -6,19 +6,10 @@ module.exports = {
     copyright: '© All rights reserved.',
     disqusShortname: '',
     menu: [
-      {
-        label: 'Articles',
-        path: '/'
-      },
+      { label: 'Articles', path: '/' },
       // TODO Add back once page is ready.
-      // {
-      //   label: 'About me',
-      //   path: '/about/',
-      // },
-      {
-        label: 'Contact me',
-        path: '/contact/'
-      }
+      // { label: 'About me', path: '/about/' },
+      { label: 'Contact me', path: '/contact/' }
     ],
     author: {
       name: 'Zachary Jones',
@@ -26,7 +17,6 @@ module.exports = {
       twitter: 'zacharytamas',
       github: 'zacharytamas',
       telegram: '',
-
       rss: '#',
       vk: '#'
     }
