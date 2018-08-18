@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     url: 'https://zacharytamas.com',
@@ -6,19 +8,10 @@ module.exports = {
     copyright: '© All rights reserved.',
     disqusShortname: '',
     menu: [
-      {
-        label: 'Articles',
-        path: '/'
-      },
+      { label: 'Articles', path: '/' },
       // TODO Add back once page is ready.
-      // {
-      //   label: 'About me',
-      //   path: '/about/',
-      // },
-      {
-        label: 'Contact me',
-        path: '/contact/'
-      }
+      // { label: 'About me', path: '/about/', },
+      { label: 'Contact me', path: '/contact/' }
     ],
     author: {
       name: 'Zachary Jones',
@@ -26,7 +19,6 @@ module.exports = {
       twitter: 'zacharytamas',
       github: 'zacharytamas',
       telegram: '',
-
       rss: '#',
       vk: '#'
     }
@@ -34,10 +26,11 @@ module.exports = {
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages'
-      }
+      options: { path: `${__dirname}/src/pages`, name: 'pages' }
+    },
+    {
+      resolve: `@zacharytamas/gatsby-source-web-data`,
+      options: { token: process.env.GITHUB_TOKEN }
     },
     {
       resolve: 'gatsby-plugin-feed',
@@ -98,17 +91,19 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
+        excerpt_separator: `<!-- more -->`,
+        excerptSeparator: `<!-- more -->`,
         plugins: [
           {
             resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 960
-            }
+            options: { maxWidth: 960 }
           },
+          `gatsby-remark-autolink-headers`,
           {
             resolve: 'gatsby-remark-responsive-iframe',
             options: { wrapperStyle: 'margin-bottom: 1.0725rem' }
           },
+          // { resolve: 'gatsby-remark-toc', options: { header: '' } },
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants'
@@ -123,9 +118,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`roboto\:400,400i,500,700`]
-      }
+      options: { fonts: [`roboto\:400,400i,500,700`] }
     },
     {
       resolve: 'gatsby-plugin-sitemap',
