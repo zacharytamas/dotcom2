@@ -1,6 +1,6 @@
-import React from 'react';
 import Link from 'gatsby-link';
 import moment from 'moment';
+import React from 'react';
 import './style.scss';
 
 class Post extends React.Component {
@@ -11,6 +11,7 @@ class Post extends React.Component {
       category,
       description
     } = this.props.data.node.frontmatter;
+    const { excerpt } = this.props.data.node;
     const { slug, categorySlug } = this.props.data.node.fields;
 
     return (
@@ -34,7 +35,7 @@ class Post extends React.Component {
             {title}
           </Link>
         </h2>
-        <p className="post__description">{description}</p>
+        <p className="post__description">{description || excerpt}</p>
         <Link className="post__readmore" to={slug}>
           Read
         </Link>
