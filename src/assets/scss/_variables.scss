@@ -1,40 +1,41 @@
-/** 
- * Variables
- */
-
+//////////////////////////////////////////////////////////////////////
 // Colors
-$color-base: #222;
-$color-primary: #5d93ff;
+//////////////////////////////////////////////////////////////////////
+
+$color-base: #222222;
+$color-primary: #2188ff;
 $color-secondary: #f7a046;
 
-$color-white: lighten($color-base, 100%);
-$color-gray: lighten($color-base, 40%);
-$color-gray-border: lighten($color-base, 77%);
 $color-gray-bg: lighten($color-base, 79%);
+$color-gray-border: lighten($color-base, 77%);
+$color-gray: lighten($color-base, 40%);
+$color-white: lighten($color-base, 100%);
 
-// Typographic
-$typographic-font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial',
-  sans-serif;
+//////////////////////////////////////////////////////////////////////
+// Typography
+//////////////////////////////////////////////////////////////////////
 
-$typographic-root-font-size: 100;
-$typographic-base-font-size: 16px;
-$typographic-small-font-size: 14px;
-
-$typographic-base-line-height: 1.625;
-
+$font-family-body: 'Open Sans', Helvetica, Arial, sans-serif;
+$font-family-headings: Domine, Helvetica, Arial, sans-serif;
 $typographic-base-font-color: $color-base;
+$typographic-base-font-size: 16px;
+$typographic-base-line-height: 1.625;
 $typographic-link-p-font-color: $color-primary;
 $typographic-link-s-font-color: $color-secondary;
+$typographic-root-font-size: 100;
+$typographic-small-font-size: 14px;
 
 $typographic-leading: round(
   16 * ($typographic-root-font-size / 100) * $typographic-base-line-height
 );
 
+//////////////////////////////////////////////////////////////////////
 // Layout
+//////////////////////////////////////////////////////////////////////
+
+$layout-breakpoint-lg: 1100px;
+$layout-breakpoint-md: 960px;
+$layout-breakpoint-sm: 685px;
 $layout-post-single-max-width: 945px;
 $layout-post-single-width: $layout-post-single-max-width - 305px;
-
-$layout-width: 1070px;
-$layout-breakpoint-sm: 685px;
-$layout-breakpoint-md: 960px;
-$layout-breakpoint-lg: 1100px;
+$layout-width: 1024px;
